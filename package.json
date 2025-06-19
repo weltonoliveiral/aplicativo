@@ -38,4 +38,11 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
   }
+"scripts": {
+  "dev": "npm-run-all --parallel dev:frontend dev:backend",
+  "dev:frontend": "vite --open",
+  "dev:backend": "convex dev",
+  "lint": "tsc -p convex -noEmit --pretty false && tsc -p . -noEmit --pretty false && convex dev --once && vite build",
+  "build": "vite build"
+}
 }
